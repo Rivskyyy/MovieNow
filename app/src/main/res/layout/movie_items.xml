@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="8dp"
+    app:cardCornerRadius="8dp"
+    app:cardUseCompatPadding="true">
+
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="8dp">
+
+
+        <ImageView
+            android:id="@+id/posterImage"
+
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:adjustViewBounds="true"
+
+            app:layout_constraintBottom_toTopOf="@id/nameOfMovie"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:src="@tools:sample/avatars" />
+
+        <TextView
+            android:id="@+id/nameOfMovie"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="name"
+            android:textColor="@color/red_another_palette"
+            android:textSize="40sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toTopOf="@id/iconTrophy"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/posterImage" />
+
+        <ImageView
+            android:id="@+id/iconTrophy"
+
+            android:layout_width="36dp"
+            android:layout_height="35dp"
+            android:src="@drawable/trophy_icon"
+            app:layout_constraintBottom_toTopOf="@id/calendarIcon"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/nameOfMovie" />
+
+        <TextView
+            android:id="@+id/rating"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="8"
+            android:textColor="@color/yellow"
+            android:textSize="25dp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toTopOf="@id/calendarIcon"
+
+            app:layout_constraintStart_toEndOf="@id/iconTrophy"
+            app:layout_constraintTop_toBottomOf="@id/nameOfMovie" />
+        <ImageView
+            android:id="@+id/calendarIcon"
+            android:layout_width="36dp"
+            android:layout_height="35dp"
+            android:src="@drawable/calendar_icon"
+            app:layout_constraintTop_toBottomOf="@id/iconTrophy"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toStartOf="@id/yearOfMovie"
+            app:layout_constraintBottom_toTopOf="@id/descriptionOfMovie"/>
+
+
+        <TextView
+            android:id="@+id/yearOfMovie"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="2021-02-24"
+            android:textColor="@color/grey"
+            android:textSize="20sp"
+            app:layout_constraintBottom_toTopOf="@id/descriptionOfMovie"
+
+            app:layout_constraintStart_toEndOf="@id/calendarIcon"
+            app:layout_constraintTop_toBottomOf="@id/rating" />
+
+        <TextView
+            android:id="@+id/descriptionOfMovie"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="description"
+            android:paddingTop="12dp"
+            android:textColor="@color/white_another_palette"
+            android:textSize="20sp"
+            android:textStyle="italic"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/yearOfMovie" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</ScrollView>
