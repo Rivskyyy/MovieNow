@@ -1,6 +1,7 @@
 package com.example.movienow.API_SERVICE
 
 
+import com.example.movienow.api_key.API_KEY
 import io.reactivex.rxjava3.core.Single
 import retrofit2.Call
 import retrofit2.http.GET

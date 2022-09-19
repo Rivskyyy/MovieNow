@@ -15,4 +15,6 @@
     <color name="red_another_palette">#972b26</color>
     <color name="pink_white">#d3b3ac</color>
     <color name="yellow">#F0C004</color>
+    <color name="invincible">#00FFFFFF</color>
+    <color name="color_of_buttoms">#d4265f</color>
 </resources>

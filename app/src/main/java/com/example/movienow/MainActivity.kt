@@ -1,9 +1,11 @@
 package com.example.movienow
 
 import android.content.Intent
+import android.media.Image
 import android.os.Bundle
 import android.util.Log
 import android.widget.Button
+import android.widget.ImageButton
 import androidx.appcompat.app.AppCompatActivity
 import com.example.movienow.API_SERVICE.API
 import com.example.movienow.API_SERVICE.API_Data
@@ -18,8 +20,8 @@ import java.lang.invoke.MethodHandleInfo.toString
 import java.util.Objects.toString
 
 class MainActivity : AppCompatActivity() {
-    private lateinit var buttonStart: Button
 
+    private lateinit var buttonStart: ImageButton
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
@@ -33,7 +35,7 @@ class MainActivity : AppCompatActivity() {
 
 
     private fun initView() {
-        buttonStart = findViewById(R.id.buttonStart)
+        buttonStart = findViewById(R.id.button_start)
     }
 }
 
