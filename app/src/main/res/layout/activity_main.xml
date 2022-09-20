@@ -48,19 +48,11 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="horizontal">
-    <!--    <HorizontalScrollView-->
-<!--        android:id="@+id/scrollView"-->
-<!--        android:layout_width="wrap_content"-->
-<!--        android:layout_height="wrap_content"-->
-<!--        app:layout_constraintStart_toStartOf="parent"-->
-<!--        app:layout_constraintEnd_toEndOf="parent"-->
-<!--        app:layout_constraintTop_toTopOf="parent"-->
-<!--        android:layout_marginBottom="786dp"-->
-<!--        app:layout_constraintBottom_toBottomOf="parent" >-->
+
 
         <ImageButton
             android:id="@+id/button_start"
-            android:layout_width="393dp"
+            android:layout_width="410dp"
             android:layout_height="222dp"
             android:layout_gravity="center"
 
@@ -88,6 +80,16 @@
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintVertical_bias="0.517" />
 
+<!--<TextView-->
+<!--    android:id="@+id/textViewGenre"-->
+<!--    android:layout_width="393dp"-->
+<!--    android:layout_height="222dp"-->
+<!--    android:text="TEXT"-->
+<!--    android:gravity="center"-->
+<!--    android:layout_gravity="center"-->
+<!--    android:textColor="@color/red"-->
+<!--    android:textSize="50sp"-->
+<!--    />-->
 
 
 

@@ -18,12 +18,13 @@ import kotlin.random.nextInt
 
 
 class MoviesAdapter() : RecyclerView.Adapter<MoviesAdapter.MyViewHolder>() {
-    //Змінено з class MoviesAdapter( private val movies : List<Result>) на :
+
     private var movies: List<Result> = ArrayList<Result>()
     fun setMovies(movies: List<Result>) {
         this.movies = movies
         notifyDataSetChanged()
         Collections.shuffle(movies)
+
     }
 
 
@@ -33,7 +34,7 @@ class MoviesAdapter() : RecyclerView.Adapter<MoviesAdapter.MyViewHolder>() {
         private lateinit var yearOfMovie : TextView
         private lateinit var descriptionOfMovie : TextView
         private lateinit var rating : TextView
-
+        private lateinit var genre : TextView
 
         fun bindMovie(movie: Result) {
 
@@ -42,7 +43,9 @@ class MoviesAdapter() : RecyclerView.Adapter<MoviesAdapter.MyViewHolder>() {
             yearOfMovie = itemView.findViewById(R.id.yearOfMovie)
             descriptionOfMovie = itemView.findViewById(R.id.descriptionOfMovie)
             rating = itemView.findViewById(R.id.rating)
+            genre = itemView.findViewById(R.id.genreTextView)
 
+            genre.text = movie.genre_ids.toString()
             rating.text = movie.vote_average.toString()
             descriptionOfMovie.text = movie.overview
             yearOfMovie.text = movie.release_date

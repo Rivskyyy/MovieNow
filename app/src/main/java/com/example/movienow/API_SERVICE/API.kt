@@ -8,13 +8,22 @@ import retrofit2.http.GET
 import retrofit2.http.Query
 
 interface API {
-    @GET("movie/popular?api_key=$API_KEY&language=en-US&")
+    @GET("discover/movie?api_key=$API_KEY&vote_average.gte=${5.0}&vote_average.lte=${10.0}")
     fun loadMovies(
 
         @Query("page")
         page: Int,
-
-        ): Single<API_Data>
+        @Query("language")
+        language: String,
+        @Query("region")
+        region: String,
+        @Query("vote_count.gte")
+        vote_countMin: Int,
+        @Query("vote_count.lte")
+        vote_countMax: Int,
+//        @Query("with_genres")
+//        genre : Int
+    ): Single<API_Data>
 
 
 }

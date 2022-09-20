@@ -47,7 +47,7 @@
             android:layout_width="36dp"
             android:layout_height="35dp"
             android:src="@drawable/trophy_icon"
-            app:layout_constraintBottom_toTopOf="@id/calendarIcon"
+            app:layout_constraintBottom_toTopOf="@id/iconGenreImageView"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/nameOfMovie" />
 
@@ -59,7 +59,7 @@
             android:textColor="@color/yellow"
             android:textSize="25dp"
             android:textStyle="bold"
-            app:layout_constraintBottom_toTopOf="@id/calendarIcon"
+            app:layout_constraintBottom_toTopOf="@id/iconGenreImageView"
 
             app:layout_constraintStart_toEndOf="@id/iconTrophy"
             app:layout_constraintTop_toBottomOf="@id/nameOfMovie" />
@@ -68,7 +68,7 @@
             android:layout_width="36dp"
             android:layout_height="35dp"
             android:src="@drawable/calendar_icon"
-            app:layout_constraintTop_toBottomOf="@id/iconTrophy"
+            app:layout_constraintTop_toBottomOf="@id/iconGenreImageView"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toStartOf="@id/yearOfMovie"
             app:layout_constraintBottom_toTopOf="@id/descriptionOfMovie"/>
@@ -84,8 +84,30 @@
             app:layout_constraintBottom_toTopOf="@id/descriptionOfMovie"
 
             app:layout_constraintStart_toEndOf="@id/calendarIcon"
-            app:layout_constraintTop_toBottomOf="@id/rating" />
+            app:layout_constraintTop_toBottomOf="@id/iconGenreImageView" />
+        <ImageView
+            android:id="@+id/iconGenreImageView"
+            android:layout_width="36dp"
+            android:layout_height="35dp"
+            android:src="@drawable/icon_genre"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toStartOf="@id/genreTextView"
+            app:layout_constraintTop_toTopOf="@id/iconTrophy"
+            app:layout_constraintBottom_toTopOf="@id/descriptionOfMovie"
 
+            />
+        <TextView
+            android:id="@+id/genreTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="25sp"
+            android:textColor="#4cb4dc"
+            android:textStyle="italic"
+            android:text="action"
+            app:layout_constraintStart_toEndOf="@id/iconGenreImageView"
+            app:layout_constraintBottom_toTopOf="@id/descriptionOfMovie"
+            app:layout_constraintTop_toTopOf="@id/iconTrophy"
+            />
         <TextView
             android:id="@+id/descriptionOfMovie"
             android:layout_width="match_parent"
@@ -95,10 +117,11 @@
             android:textColor="@color/white_another_palette"
             android:textSize="20sp"
             android:textStyle="italic"
+            android:layout_margin="15dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/yearOfMovie" />
+            app:layout_constraintTop_toBottomOf="@id/genreTextView" />
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>

@@ -11,4 +11,5 @@ data class API_Data(
     val total_pages: Int,
     @SerializedName("total_results")
     val total_results: Int
+
 )

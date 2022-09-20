@@ -6,6 +6,7 @@ import android.os.Bundle
 import android.util.Log
 import android.widget.Button
 import android.widget.ImageButton
+import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 import com.example.movienow.API_SERVICE.API
 import com.example.movienow.API_SERVICE.API_Data
@@ -22,20 +23,30 @@ import java.util.Objects.toString
 class MainActivity : AppCompatActivity() {
 
     private lateinit var buttonStart: ImageButton
+    private lateinit var buttonGenreHorror: ImageButton
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
         initView()
 
         buttonStart.setOnClickListener {
+
             intent = Intent(this, FindMovieActivity::class.java)
             startActivity(intent)
         }
+
+        buttonGenreHorror.setOnClickListener {
+            //add new intent for genre
+        }
     }
+
+    //need to add new buttons for all genres
 
 
     private fun initView() {
         buttonStart = findViewById(R.id.button_start)
+        buttonGenreHorror = findViewById(R.id.button_catalog)
     }
 }
 

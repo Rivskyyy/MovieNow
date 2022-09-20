@@ -13,12 +13,14 @@ import kotlinx.coroutines.launch
 import retrofit2.CallAdapter
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
+import retrofit2.create
 import java.util.Arrays.toString
 import java.util.Objects.toString
 
 
 const val BASE_URL: String = "https://api.themoviedb.org/3/"
 const val BASE_IMAGE_POSTER: String = "https://image.tmdb.org/t/p/w500/"
+
 
 class ApiFactory {
 
