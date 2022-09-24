@@ -80,6 +80,90 @@
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintVertical_bias="0.517" />
 
+        <ImageButton
+            android:id="@+id/button_action"
+            android:layout_width="393dp"
+            android:layout_height="222dp"
+            android:layout_gravity="center"
+            android:layout_marginStart="60dp"
+            android:backgroundTint="@color/invincible"
+            android:src="@drawable/button_catalog"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.547"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.517" />
+        <ImageButton
+            android:id="@+id/button_comedy"
+            android:layout_width="393dp"
+            android:layout_height="222dp"
+            android:layout_gravity="center"
+            android:layout_marginStart="60dp"
+            android:backgroundTint="@color/invincible"
+            android:src="@drawable/button_catalog"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.547"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.517" />
+        <ImageButton
+            android:id="@+id/button_drama"
+            android:layout_width="393dp"
+            android:layout_height="222dp"
+            android:layout_gravity="center"
+            android:layout_marginStart="60dp"
+            android:backgroundTint="@color/invincible"
+            android:src="@drawable/button_catalog"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.547"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.517" />
+        <ImageButton
+            android:id="@+id/button_fantasy"
+            android:layout_width="393dp"
+            android:layout_height="222dp"
+            android:layout_gravity="center"
+            android:layout_marginStart="60dp"
+            android:backgroundTint="@color/invincible"
+            android:src="@drawable/button_catalog"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.547"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.517" />
+        <ImageButton
+            android:id="@+id/button_thriller"
+            android:layout_width="393dp"
+            android:layout_height="222dp"
+            android:layout_gravity="center"
+            android:layout_marginStart="60dp"
+            android:backgroundTint="@color/invincible"
+            android:src="@drawable/button_catalog"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.547"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.517" />
+        <ImageButton
+            android:id="@+id/button_animation"
+            android:layout_width="393dp"
+            android:layout_height="222dp"
+            android:layout_gravity="center"
+            android:layout_marginStart="60dp"
+            android:backgroundTint="@color/invincible"
+            android:src="@drawable/button_catalog"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.547"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.517" />
 <!--<TextView-->
 <!--    android:id="@+id/textViewGenre"-->
 <!--    android:layout_width="393dp"-->

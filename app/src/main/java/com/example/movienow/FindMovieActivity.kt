@@ -77,13 +77,14 @@ class FindMovieActivity : AppCompatActivity() {
 
         Log.d("TEST ITEMS" ,showResults.toString())
 
-        val vote_min = 300
+        val vote_min = 500
         val vote_max = 1000000
 
         val setupGenre: Int? = intent.getStringExtra("genre")?.toInt()
         val setupAverageMin = intent.getStringExtra("averageMin")?.toInt()
         val setupAverageMax = intent.getStringExtra("averageMax")?.toInt()
-        val setupPageForAllGenres = intent.getStringExtra("genre")?.toInt() // use when genre is null
+        val setupPageForAllGenre = intent.getStringExtra("setupPageForAllGenre")?.toInt()
+       // val setupPageForAllGenres = intent.getStringExtra("genre")?.toInt() // use when genre is null
 
         val voteAverageMin = setupAverageMin
         val voteAverageMax = setupAverageMax
@@ -94,11 +95,39 @@ class FindMovieActivity : AppCompatActivity() {
 
         //need to fix getStringExtra -> getIntExtra
 
-        val page = if (setupPageForAllGenres == null) {
-            Random.nextInt(1, 100)
-        } else {
-            Random.nextInt(1, 56)
+        var page  =
+        try {
+
+            let {
+                if (genre!!.equals(27))  {
+                    Random.nextInt(1, 41)       // horror
+                }  else if   (genre.equals(28) ) {
+                    Random.nextInt(1,40)         // action
+                } else if (genre.equals(35)) {
+                    Random.nextInt(1,40)        //comedy
+                } else if (genre.equals(18)){
+                    Random.nextInt(1,40)        //drama
+                } else if (genre.equals(14)){
+                    Random.nextInt(1,37)        //fantasy
+                } else if (genre.equals(53)){
+                    Random.nextInt(1,40)        //thriller
+                } else if (genre.equals(16)){
+                    Random.nextInt(1,27)        //animation
+                  // all
+                } else{
+                      0
+            }
+
+            }
+        } catch (e:Exception){
+            Log.d("EXCEPTION : ", e.message.toString())
         }
+
+            if ( genre == null){
+                page = Random.nextInt(1, 100)       //all
+            }
+
+
 
         var language: String = Locale.getDefault().language.toString()
         if (language.equals("ru")) {
@@ -131,7 +160,7 @@ class FindMovieActivity : AppCompatActivity() {
 
                 Log.d("Test_Fail", it.message.toString())
             })
-        Log.d(("URL : "), ApiFactory.apiService.toString())
+
     }
 
 
