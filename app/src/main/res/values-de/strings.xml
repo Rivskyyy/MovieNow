@@ -2,4 +2,11 @@
 <resources>
 
     <string name="next">Nächste</string>
+    <string name="thriller">Thriller</string>
+    <string name="action">Aktion</string>
+    <string name="comedy">Komödie</string>
+    <string name="drama">Theater</string>
+    <string name="fantasy">Fantasie</string>
+    <string name="cartoons">Animation</string>
+    <string name="horror">Grusel</string>
 </resources>

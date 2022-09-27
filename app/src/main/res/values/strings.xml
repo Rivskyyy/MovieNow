@@ -1,5 +1,12 @@
 <resources>
     <string name="app_name" translatable="false">Movie,Now!</string>
     <string name="next">NEXT</string>
+    <string name="thriller">Thriller</string>
+    <string name="action">Action</string>
+    <string name="comedy">Comedy</string>
+    <string name="drama">Drama</string>
+    <string name="fantasy">Fantasy</string>
+    <string name="cartoons">Animation</string>
+    <string name="horror">Horror</string>
 
 </resources>

@@ -1,5 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 <string name="next">Далі</string>
+    <string name="thriller">Трилер</string>
+    <string name="action">Екшен</string>
+    <string name="comedy">Комедія</string>
+    <string name="drama">Драма</string>
+    <string name="fantasy">Фентезі</string>
+    <string name="cartoons">Анімація</string>
+    <string name="horror">Жахи</string>
 
 </resources>

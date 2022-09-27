@@ -90,11 +90,6 @@ class FindMovieActivity : AppCompatActivity() {
         val voteAverageMax = setupAverageMax
         val genre: Int? = setupGenre
 
-        // need more total results, something get wrong and results get less than must be
-        // fixed, the region's fault
-
-        //need to fix getStringExtra -> getIntExtra
-
         var page  =
         try {
 
@@ -139,6 +134,11 @@ class FindMovieActivity : AppCompatActivity() {
 
         Log.d("Language: ", language.toString())
        // Log.d("Region:  ,", region.toString())
+        // need more total results, something get wrong and results get less than must be
+        // fixed, the region's fault
+
+        //need to fix getStringExtra -> getIntExtra
+
 
         val apiFactory = ApiFactory.apiService.loadMovies(
             page,

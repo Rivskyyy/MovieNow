@@ -32,12 +32,15 @@
 
     <Button
         android:id="@+id/buttonNextMovie"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_width="300dp"
+        android:layout_height="60dp"
+        android:paddingStart="10dp"
+        android:paddingEnd="10dp"
 
-
-        android:backgroundTint="@color/pink_white"
+        android:backgroundTint="@color/red_another_palette"
+        android:textColor="@color/white_another_palette"
         android:text="@string/next"
+        android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
