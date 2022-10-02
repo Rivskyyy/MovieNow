@@ -56,9 +56,11 @@ dependencies {
     //Glide
     implementation 'com.github.bumptech.glide:glide:4.13.2'
     annotationProcessor 'com.github.bumptech.glide:compiler:4.13.2'
-    //coroutines
-    implementation 'org.jetbrains.kotlinx:kotlinx-coroutines-core:1.4.1'
-    implementation 'org.jetbrains.kotlinx:kotlinx-coroutines-android:1.6.1'
+    //Room
+    def room_version = "2.4.3"
+
+    implementation "androidx.room:room-runtime:$room_version"
+    annotationProcessor "androidx.room:room-compiler:$room_version"
     //Lifecycle & LiveData
     def lifecycle_version = "2.6.0-alpha01"
     def arch_version = "2.1.0"

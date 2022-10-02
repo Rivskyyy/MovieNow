@@ -1,7 +1,10 @@
 package com.example.movienow.API_SERVICE
 
+import androidx.room.Entity
+import androidx.room.PrimaryKey
 import com.google.gson.annotations.SerializedName
 
+@Entity(tableName = "favourite_movies")
 data class Result(
     @SerializedName("adult")
     val adult: Boolean,
@@ -9,6 +12,7 @@ data class Result(
     val backdrop_path: String,
     @SerializedName("genre_ids")
     val genre_ids: List<Int>,
+    @PrimaryKey
     @SerializedName("id")
     val id: Int,
     @SerializedName("original_language")
