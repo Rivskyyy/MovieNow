@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:backgroundTint="@color/black"
+        android:background="@color/black"
+        app:cardCornerRadius="20dp"
+        app:cardPreventCornerOverlap="true"
+        app:cardUseCompatPadding="true">
+<androidx.constraintlayout.widget.ConstraintLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:backgroundTint="@color/black"
+    android:background="@color/black"
+    >
+
+
+        <ImageView
+            android:id="@+id/posterImage"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:adjustViewBounds="true"
+            android:paddingTop="10dp"
+
+            app:layout_constraintBottom_toTopOf="@id/nameOfMovie"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:src="@tools:sample/avatars" />
+
+        <TextView
+            android:id="@+id/nameOfMovie"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+
+            android:text="name"
+            android:textColor="@color/white_another_palette"
+            android:textSize="20sp"
+
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="parent" />
+
+
+<!--        <ImageView-->
+<!--            android:id="@+id/iconTrophy"-->
+<!--            android:layout_width="50dp"-->
+<!--            android:layout_height="70dp"-->
+<!--            android:layout_marginEnd="4dp"-->
+<!--            android:layout_marginBottom="8dp"-->
+
+
+
+<!--            android:paddingTop="10dp"-->
+<!--            android:src="@drawable/trophy_icon"-->
+<!--            app:layout_constraintBottom_toBottomOf="@+id/posterImage"-->
+<!--            app:layout_constraintEnd_toStartOf="@+id/rating"-->
+<!--            app:layout_constraintTop_toTopOf="@+id/rating" />-->
+
+<!--        <TextView-->
+<!--            android:id="@+id/rating"-->
+<!--            android:background="@color/black"-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_marginEnd="8dp"-->
+<!--            android:paddingTop="10dp"-->
+<!--            android:paddingEnd="12dp"-->
+<!--            android:paddingBottom="12dp"-->
+<!--            android:text="8"-->
+<!--            android:textColor="@color/yellow"-->
+<!--            android:textSize="40sp"-->
+<!--            android:textStyle="bold"-->
+<!--            app:layout_constraintBottom_toBottomOf="@+id/posterImage"-->
+
+<!--            app:layout_constraintEnd_toEndOf="@+id/posterImage" />-->
+
+</androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.cardview.widget.CardView>

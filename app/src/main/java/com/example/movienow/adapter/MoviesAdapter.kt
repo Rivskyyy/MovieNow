@@ -38,14 +38,14 @@ public class MoviesAdapter() : RecyclerView.Adapter<MoviesAdapter.MyViewHolder>(
     private lateinit var imageView: ImageView
 
 
-    fun setMovies(movies: List<Result>) {
+    fun setMovies(movies: List<Result>){
         this.movies = movies
         notifyDataSetChanged()
         Collections.shuffle(movies)
     }
 
 
-    class MyViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView), LifecycleOwner {
+    class MyViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
 
         private lateinit var posterImageView: ImageView
         private lateinit var nameOfMovie: TextView
@@ -72,35 +72,9 @@ public class MoviesAdapter() : RecyclerView.Adapter<MoviesAdapter.MyViewHolder>(
             nameOfMovie.text = movie.title
             var id = movie.id
             Glide.with(itemView).load(BASE_IMAGE_POSTER + movie.poster_path).into(posterImageView)
-
-            fun getDataBaseMovie() {
-                val itemMovieData = com.example.movienow.API_SERVICE.Result(
-                    movie.id, movie.overview,
-                    movie.poster_path, movie.release_date,
-                    movie.title, movie.vote_average
-                )
-                Log.d("DATA", getDataBaseMovie().toString())
-
-                fun getContext(context: Context) {
-                    var movieDao: MovieDao
-                    movieDao = MovieDataBase.getInstance(context).movieDao()
-                    movieDao.getAllFavouriteMovie().observe(this, androidx.lifecycle.Observer {
-                        movieDao.insertMovie(itemMovieData).subscribeOn(Schedulers.io()).subscribe()
-
-                    })
-                }
-            }
-
         }
-
-        override fun getLifecycle(): Lifecycle {
-
-            return lifecycle
-        }
-
 
     }
-
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MyViewHolder {
         val view = LayoutInflater.from(parent.context).inflate(R.layout.movie_items, parent, false)

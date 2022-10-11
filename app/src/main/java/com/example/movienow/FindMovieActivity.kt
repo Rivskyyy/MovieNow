@@ -28,17 +28,17 @@ class FindMovieActivity : AppCompatActivity() {
     private lateinit var adapter: MoviesAdapter
     private lateinit var viewModel: MainViewModel
     private lateinit var dataBase: MovieDataBase
-    //private lateinit var imageFavorite: ImageButton
     private lateinit var movieDao: MovieDao
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_find_movie)
 
+
+
         initViewFindMovie()
 
         loadMovies()
-
         recyclerView.layoutManager = LinearLayoutManager(           // -> for future catalog
 
             this,
@@ -75,8 +75,6 @@ class FindMovieActivity : AppCompatActivity() {
     private fun initViewFindMovie() {
         buttonNextMovie = findViewById(R.id.buttonNextMovie)
         recyclerView = findViewById(R.id.recyclerView)
-
-        //imageFavorite = findViewById(R.id.imageButtonFavor)
         adapter = MoviesAdapter()
 
     }
@@ -178,6 +176,7 @@ class FindMovieActivity : AppCompatActivity() {
             .subscribeOn(Schedulers.io())
             .observeOn(AndroidSchedulers.mainThread())
             .subscribe(Consumer {
+
                 Log.d("Test", it.toString())
                 val dataMovies = adapter.setMovies(it.results)
 

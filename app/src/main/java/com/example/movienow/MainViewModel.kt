@@ -23,9 +23,6 @@ class MainViewModel(application: Application) : AndroidViewModel(application) {
 
         return movieDao.getFavouriteById(movieId)
     }
-    fun getFavouriteMovieIdfromDB(){
-
-    }
 
     fun insertMovie(result: Result) {
         val disposable: Disposable = movieDao.insertMovie(result).subscribeOn(Schedulers.io()).subscribe()
