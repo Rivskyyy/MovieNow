@@ -1,26 +1,24 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_gravity="center"
     android:padding="8dp"
     app:cardCornerRadius="8dp"
     app:cardUseCompatPadding="true">
 
 
-    <androidx.constraintlayout.widget.ConstraintLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:padding="8dp">
+
 
 
         <ImageView
             android:id="@+id/posterImage"
-
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:adjustViewBounds="true"
+            android:paddingTop="10dp"
 
             app:layout_constraintBottom_toTopOf="@id/nameOfMovie"
             app:layout_constraintEnd_toEndOf="parent"
@@ -43,81 +41,40 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/posterImage" />
 
+
         <ImageView
             android:id="@+id/iconTrophy"
+            android:layout_width="50dp"
+            android:layout_height="70dp"
+            android:layout_marginEnd="4dp"
+            android:layout_marginBottom="8dp"
+
+
+
             android:paddingTop="10dp"
-            android:layout_width="36dp"
-            android:layout_height="35dp"
             android:src="@drawable/trophy_icon"
-            app:layout_constraintBottom_toTopOf="@id/calendarIcon"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/nameOfMovie" />
+            app:layout_constraintBottom_toBottomOf="@+id/posterImage"
+            app:layout_constraintEnd_toStartOf="@+id/rating"
+            app:layout_constraintTop_toTopOf="@+id/rating" />
 
-        <TextView
-            android:id="@+id/rating"
-            android:paddingTop="10dp"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="8"
-            android:textColor="@color/yellow"
-            android:textSize="25dp"
-            android:textStyle="bold"
-            app:layout_constraintBottom_toTopOf="@id/calendarIcon"
+    <TextView
+        android:id="@+id/rating"
 
-            app:layout_constraintStart_toEndOf="@id/iconTrophy"
-            app:layout_constraintTop_toBottomOf="@id/nameOfMovie" />
-        <ImageView
-            android:id="@+id/calendarIcon"
-            android:layout_width="36dp"
-            android:layout_height="35dp"
-            android:src="@drawable/calendar_icon"
-            app:layout_constraintTop_toBottomOf="@id/iconTrophy"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toStartOf="@id/yearOfMovie"
-           />
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="8dp"
+        android:paddingTop="10dp"
+        android:paddingEnd="12dp"
+        android:paddingBottom="12dp"
+        android:text="8"
+        android:textColor="@color/yellow"
+        android:textSize="40dp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@+id/posterImage"
+
+        app:layout_constraintEnd_toEndOf="@+id/posterImage" />
 
 
-        <TextView
-            android:id="@+id/yearOfMovie"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="2021-02-24"
-            android:textColor="@color/grey"
-            android:textSize="20sp"
-            app:layout_constraintBottom_toBottomOf="@id/calendarIcon"
-
-            app:layout_constraintStart_toEndOf="@id/calendarIcon"/>
 
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="6dp"
-            android:paddingTop="10dp"
-            android:text="________________________"
-            android:textColor="@color/red_another_palette"
-            android:textSize="20dp"
-            app:layout_constraintBottom_toTopOf="@+id/descriptionOfMovie"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/calendarIcon" />
-
-        <TextView
-            android:id="@+id/descriptionOfMovie"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_margin="20dp"
-            android:paddingTop="12dp"
-            android:text="description"
-            android:textColor="@color/white_another_palette"
-            android:textSize="20sp"
-            android:textStyle="italic"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="@id/yearOfMovie"
-            app:layout_constraintTop_toBottomOf="@id/yearOfMovie" />
-
-
-    </androidx.constraintlayout.widget.ConstraintLayout>
-
-</ScrollView>
+</androidx.constraintlayout.widget.ConstraintLayout>
