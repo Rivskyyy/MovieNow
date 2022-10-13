@@ -27,7 +27,14 @@ class FavouriteMoviesActivity : AppCompatActivity() {
         recyclerView.adapter = moviesAdapter
 
         var viewModel: FavouriteViewModel = ViewModelProvider(this)[FavouriteViewModel::class.java]
+        moviesAdapter.onMovieClickListener_object = object : FavouriteMoviesAdapter.onMovieClickListener {
+            override fun onMovieClick(movie: Result) {
+           val  intent = MovieDetailActivity.NewIntent(this@FavouriteMoviesActivity, movie)
+                startActivity(intent )
+            }
 
+
+        }
 
 
             viewModel.getMovies().observe(this, Observer {

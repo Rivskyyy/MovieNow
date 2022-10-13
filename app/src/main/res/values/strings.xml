@@ -8,5 +8,6 @@
     <string name="fantasy">Fantasy</string>
     <string name="cartoons">Animation</string>
     <string name="horror">Horror</string>
+    <string name="back">back</string>
 
 </resources>
