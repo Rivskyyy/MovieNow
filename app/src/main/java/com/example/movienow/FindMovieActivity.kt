@@ -1,12 +1,13 @@
 package com.example.movienow
 
 
-import android.content.Intent
 import android.os.Bundle
+import android.os.CountDownTimer
+import android.os.Handler
 import android.util.Log
+import android.view.View
 import android.widget.Button
 import androidx.appcompat.app.AppCompatActivity
-import androidx.lifecycle.Observer
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.movienow.API_SERVICE.ApiFactory
@@ -17,6 +18,7 @@ import com.example.movienow.database.MovieDataBase
 import io.reactivex.rxjava3.android.schedulers.AndroidSchedulers
 import io.reactivex.rxjava3.functions.Consumer
 import io.reactivex.rxjava3.schedulers.Schedulers
+import pl.droidsonroids.gif.GifImageView
 import java.util.*
 import kotlin.random.Random
 
@@ -29,14 +31,18 @@ class FindMovieActivity : AppCompatActivity() {
     private lateinit var viewModel: MainViewModel
     private lateinit var dataBase: MovieDataBase
     private lateinit var movieDao: MovieDao
+    private lateinit var loadGif : GifImageView
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_find_movie)
 
-
-
         initViewFindMovie()
+
+        recyclerView.postDelayed(Runnable { recyclerView.setVisibility(View.VISIBLE) }, 800)
+        val handler = Handler()
+        loadGif.postDelayed(Runnable { loadGif.setVisibility(View.GONE) }, 800)
+       // handler.postDelayed(Runnable { loadGif.setVisibility(View.VISIBLE) }, 5000)
 
         loadMovies()
         recyclerView.layoutManager = LinearLayoutManager(           // -> for future catalog
@@ -64,6 +70,11 @@ class FindMovieActivity : AppCompatActivity() {
         }
         buttonNextMovie.setOnClickListener {
 
+            loadGif.setVisibility(View.VISIBLE)
+            loadGif.postDelayed(Runnable { loadGif.setVisibility(View.GONE) }, 800)
+            recyclerView.setVisibility(View.GONE)
+            recyclerView.postDelayed(Runnable { recyclerView.setVisibility(View.VISIBLE) }, 800)
+
             loadMovies()
 
 
@@ -75,12 +86,16 @@ class FindMovieActivity : AppCompatActivity() {
     private fun initViewFindMovie() {
         buttonNextMovie = findViewById(R.id.buttonNextMovie)
         recyclerView = findViewById(R.id.recyclerView)
+        loadGif = findViewById<GifImageView>(R.id.gifLoadMovies)
         adapter = MoviesAdapter()
 
     }
 
 
     fun loadMovies() {
+
+        loadGif.postDelayed(Runnable { loadGif.setVisibility(View.GONE) }, 800)
+
 //        fun uploadOptimization(result: Result){
 //            if ( result.overview.length==null){
 //                loadMovies()
