@@ -1,11 +1,13 @@
-package com.example.movienow
+package com.RivskyInc.movienow
 
 import android.app.Application
 import androidx.lifecycle.AndroidViewModel
 import androidx.lifecycle.LiveData
-import com.example.movienow.API_SERVICE.Result
-import com.example.movienow.database.MovieDao
-import com.example.movienow.database.MovieDataBase
+import com.RivskyInc.movienow.database.MovieDao
+import com.RivskyInc.movienow.database.MovieDataBase
+import com.RivskyInc.movienow.API_SERVICE.Result
+
+
 
 class FavouriteViewModel(application: Application) : AndroidViewModel(application) {
 

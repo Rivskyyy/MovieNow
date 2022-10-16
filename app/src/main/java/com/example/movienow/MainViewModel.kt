@@ -1,17 +1,15 @@
-package com.example.movienow
+package com.RivskyInc.movienow
 
 import android.app.Application
-import android.content.Context
 import android.util.Log
 import androidx.lifecycle.AndroidViewModel
 import androidx.lifecycle.LiveData
-import com.example.movienow.API_SERVICE.Result
-import com.example.movienow.database.MovieDao
-import com.example.movienow.database.MovieDataBase
+import com.RivskyInc.movienow.API_SERVICE.Result
+import com.RivskyInc.movienow.database.MovieDao
+import com.RivskyInc.movienow.database.MovieDataBase
 import io.reactivex.rxjava3.disposables.CompositeDisposable
 import io.reactivex.rxjava3.disposables.Disposable
 import io.reactivex.rxjava3.schedulers.Schedulers
-import kotlinx.coroutines.flow.callbackFlow
 
 class MainViewModel(application: Application) : AndroidViewModel(application) {
 

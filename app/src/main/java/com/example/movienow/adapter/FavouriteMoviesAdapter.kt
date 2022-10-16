@@ -1,4 +1,4 @@
-package com.example.movienow.adapter
+package com.RivskyInc.movienow.adapter
 
 import android.view.LayoutInflater
 import android.view.View
@@ -6,11 +6,10 @@ import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
+import com.RivskyInc.movienow.R
 import com.bumptech.glide.Glide
-import com.example.movienow.API_SERVICE.BASE_IMAGE_POSTER
-import com.example.movienow.API_SERVICE.Result
-import com.example.movienow.FavouriteViewModel
-import com.example.movienow.R
+import com.RivskyInc.movienow.API_SERVICE.BASE_IMAGE_POSTER
+import com.RivskyInc.movienow.API_SERVICE.Result
 import java.util.*
 
 class FavouriteMoviesAdapter(): RecyclerView.Adapter<FavouriteMoviesAdapter.MyViewHolder>(){
@@ -19,7 +18,7 @@ class FavouriteMoviesAdapter(): RecyclerView.Adapter<FavouriteMoviesAdapter.MyVi
     private var movies: List<Result> = ArrayList<Result>()
 
 
-    var onMovieClickListener_object: FavouriteMoviesAdapter.onMovieClickListener? = null
+    var onMovieClickListener_object: onMovieClickListener? = null
 
 
 
@@ -77,7 +76,7 @@ class FavouriteMoviesAdapter(): RecyclerView.Adapter<FavouriteMoviesAdapter.MyVi
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MyViewHolder {
         val view = LayoutInflater.from(parent.context).inflate(R.layout.favourite_movie_items, parent, false)
-        return FavouriteMoviesAdapter.MyViewHolder(view)
+        return MyViewHolder(view)
     }
 
     interface onMovieClickListener {

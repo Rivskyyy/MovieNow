@@ -1,22 +1,19 @@
-package com.example.movienow
+package com.RivskyInc.movienow
 
 import android.content.Context
 import android.content.Intent
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
 import android.widget.ImageButton
 import android.widget.ImageView
 import android.widget.TextView
 import android.widget.Toast
+import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.Observer
+import com.RivskyInc.movienow.API_SERVICE.BASE_IMAGE_POSTER
+import com.RivskyInc.movienow.API_SERVICE.Result
+import com.RivskyInc.movienow.adapter.MoviesAdapter
 import com.bumptech.glide.Glide
-import com.example.movienow.API_SERVICE.BASE_IMAGE_POSTER
-import com.example.movienow.API_SERVICE.Result
-import com.example.movienow.adapter.MoviesAdapter
-import com.example.movienow.database.MovieDao
-import com.example.movienow.database.MovieDataBase
-import io.reactivex.rxjava3.schedulers.Schedulers
 
 const val EXTRA_MOVIE: String = "movie"
 

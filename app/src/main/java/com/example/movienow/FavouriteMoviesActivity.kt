@@ -1,17 +1,16 @@
-package com.example.movienow
+package com.RivskyInc.movienow
 
 import android.content.Context
 import android.content.Intent
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
+import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
-import androidx.lifecycle.get
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import com.example.movienow.API_SERVICE.Result
-import com.example.movienow.adapter.FavouriteMoviesAdapter
+import com.RivskyInc.movienow.API_SERVICE.Result
+import com.RivskyInc.movienow.adapter.FavouriteMoviesAdapter
 
 class FavouriteMoviesActivity : AppCompatActivity() {
 

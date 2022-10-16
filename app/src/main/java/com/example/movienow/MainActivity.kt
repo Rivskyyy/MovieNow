@@ -1,12 +1,14 @@
 package com.example.movienow
 
-import android.R.attr.button
 import android.content.Intent
 import android.os.Bundle
 import android.widget.HorizontalScrollView
 import android.widget.ImageButton
 import androidx.appcompat.app.AppCompatActivity
-import androidx.core.view.MotionEventCompat.getY
+import com.RivskyInc.movienow.FavouriteMoviesActivity
+import com.RivskyInc.movienow.FindMovieActivity
+import com.RivskyInc.movienow.InfoActivity
+import com.RivskyInc.movienow.R
 
 
 class MainActivity : AppCompatActivity() {

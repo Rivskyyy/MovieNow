@@ -10,9 +10,11 @@ android {
 
     compileSdk 32
 
+        namespace 'com.RivskyInc.movienow'
+
 
     defaultConfig {
-        applicationId "com.example.movienow"
+        applicationId "com.RivskyInc.movienow"
         minSdk 21
         targetSdk 32
         versionCode 1

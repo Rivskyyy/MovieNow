@@ -1,4 +1,4 @@
-package com.example.movienow.API_SERVICE
+package com.RivskyInc.movienow.API_SERVICE
 
 import androidx.room.Entity
 import androidx.room.PrimaryKey

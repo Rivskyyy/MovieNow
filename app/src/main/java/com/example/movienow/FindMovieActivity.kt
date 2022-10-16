@@ -1,8 +1,7 @@
-package com.example.movienow
+package com.RivskyInc.movienow
 
 
 import android.os.Bundle
-import android.os.CountDownTimer
 import android.os.Handler
 import android.util.Log
 import android.view.View
@@ -10,11 +9,12 @@ import android.widget.Button
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import com.example.movienow.API_SERVICE.ApiFactory
-import com.example.movienow.API_SERVICE.Result
-import com.example.movienow.adapter.MoviesAdapter
-import com.example.movienow.database.MovieDao
-import com.example.movienow.database.MovieDataBase
+import com.RivskyInc.movienow.R
+import com.RivskyInc.movienow.API_SERVICE.ApiFactory
+import com.RivskyInc.movienow.API_SERVICE.Result
+import com.RivskyInc.movienow.adapter.MoviesAdapter
+import com.RivskyInc.movienow.database.MovieDao
+import com.RivskyInc.movienow.database.MovieDataBase
 import io.reactivex.rxjava3.android.schedulers.AndroidSchedulers
 import io.reactivex.rxjava3.functions.Consumer
 import io.reactivex.rxjava3.schedulers.Schedulers
@@ -93,23 +93,6 @@ class FindMovieActivity : AppCompatActivity() {
 
 
     fun loadMovies() {
-
-        loadGif.postDelayed(Runnable { loadGif.setVisibility(View.GONE) }, 800)
-
-//        fun uploadOptimization(result: Result){
-//            if ( result.overview.length==null){
-//                loadMovies()
-//            } else {
-//                0
-//            }
-//        }
-//        var starOff: = (
-//            this,
-//            R.drawable.heart_icon_empty_resize)
-//
-//        var starOn: Drawable? = ContextCompat.getDrawable(
-//            this,
-//            R.drawable.heart_button_red)
 
         val showResults = adapter.itemCount.toString()
 

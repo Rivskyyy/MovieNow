@@ -1,29 +1,17 @@
-package com.example.movienow.adapter
+package com.RivskyInc.movienow.adapter
 
-import android.app.Application
-import android.content.Context
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
-import android.widget.Toast
-import androidx.lifecycle.Lifecycle
-import androidx.lifecycle.LifecycleOwner
-import androidx.lifecycle.LiveData
 import androidx.recyclerview.widget.RecyclerView
+import com.RivskyInc.movienow.R
 import com.bumptech.glide.Glide
-import com.example.movienow.API_SERVICE.BASE_IMAGE_POSTER
-import com.example.movienow.API_SERVICE.Result
-import com.example.movienow.FindMovieActivity
-import com.example.movienow.MainViewModel
-import com.example.movienow.R
-import com.example.movienow.database.MovieDao
-import com.example.movienow.database.MovieDao_Impl
-import com.example.movienow.database.MovieDataBase
-import com.example.movienow.database.MovieDataBase_Impl
-import io.reactivex.rxjava3.schedulers.Schedulers
+import com.RivskyInc.movienow.API_SERVICE.BASE_IMAGE_POSTER
+import com.RivskyInc.movienow.API_SERVICE.Result
+import com.RivskyInc.movienow.MainViewModel
+
 import java.util.*
 
 public class MoviesAdapter() : RecyclerView.Adapter<MoviesAdapter.MyViewHolder>() {
