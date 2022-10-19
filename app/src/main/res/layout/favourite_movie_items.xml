@@ -35,11 +35,11 @@
             android:id="@+id/nameOfMovie"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-
+            android:background="@color/black_another_palette"
             android:text="name"
             android:textColor="@color/white_another_palette"
             android:textSize="20sp"
-
+            android:paddingStart="12dp"
             android:textStyle="bold"
             app:layout_constraintBottom_toBottomOf="parent" />
 
