@@ -15,8 +15,8 @@ interface API {
         page: Int?,
         @Query("language")
         language: String,
-//        @Query("region")
-//        region: String,
+        @Query("region")
+        region: String,
         @Query("vote_count.gte")
         vote_countMin: Int,
         @Query("vote_count.lte")

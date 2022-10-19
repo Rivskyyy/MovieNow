@@ -11,7 +11,7 @@ import com.google.gson.annotations.SerializedName
 //    @SerializedName("backdrop_path")
 //    val backdrop_path: String,
 //    @SerializedName("genre_ids")
-//    val genre_ids: List<Int>,
+//    var genre_ids: List<Int>,
     @PrimaryKey
     @SerializedName("id")
     var id: Int?,
