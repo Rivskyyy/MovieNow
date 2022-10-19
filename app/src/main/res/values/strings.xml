@@ -9,5 +9,6 @@
     <string name="cartoons">Animation</string>
     <string name="horror">Horror</string>
     <string name="back">back</string>
+    <string name="empty">Empty</string>
 
 </resources>

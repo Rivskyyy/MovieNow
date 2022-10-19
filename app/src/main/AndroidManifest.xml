@@ -23,12 +23,15 @@
             android:exported="false" />
         <activity
             android:name=".MovieDetailActivity"
+
             android:exported="false" />
         <activity
             android:name=".FindMovieActivity"
+
             android:exported="false" />
         <activity
             android:name="com.example.movienow.MainActivity"
+
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
