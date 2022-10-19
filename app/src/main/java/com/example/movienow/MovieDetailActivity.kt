@@ -1,22 +1,21 @@
 package com.RivskyInc.movienow
 
+import android.app.Activity
 import android.content.Context
 import android.content.Intent
 import android.os.Bundle
 import android.util.Log
-import android.widget.ImageButton
-import android.widget.ImageView
-import android.widget.TextView
-import android.widget.Toast
+import android.widget.*
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.Observer
 import com.RivskyInc.movienow.API_SERVICE.BASE_IMAGE_POSTER
 import com.RivskyInc.movienow.API_SERVICE.Result
 import com.RivskyInc.movienow.adapter.MoviesAdapter
 import com.bumptech.glide.Glide
+import com.example.movienow.MainActivity
 
 const val EXTRA_MOVIE: String = "movie"
-
+const val GENRE : String = "genre"
 class MovieDetailActivity : AppCompatActivity() {
 
     private lateinit var posterImageView: ImageView
@@ -25,6 +24,7 @@ class MovieDetailActivity : AppCompatActivity() {
     private lateinit var descriptionOfMovie: TextView
     private lateinit var rating: TextView
     private lateinit var adapter: MoviesAdapter
+    private lateinit var backButton : Button
 
     // private lateinit var movieDao : MovieDao
     private lateinit var imageFavorite: ImageButton
@@ -33,7 +33,25 @@ class MovieDetailActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_movie_detail)
+
         initView()
+        val setupGenre: Int? = intent.getIntExtra(GENRE, 0)
+        val setupAverageMin = intent.getIntExtra("averageMin", 5 )
+        val setupAverageMax = intent.getIntExtra("averageMax", 10)
+        var  genre = setupGenre
+        Log.d("testGenre", setupGenre.toString())
+        backButton.setOnClickListener {
+
+           // val setupGenre: Int? = intent.getIntExtra("genre", 0)
+//            val setupAverageMin = intent.getIntExtra("averageMin", 5 )
+//            val setupAverageMax = intent.getIntExtra("averageMax", 10)
+//           val intent  = Intent(this, FindMovieActivity::class.java)
+//            intent.putExtra(GENRE, setupGenre)
+//            startActivity(intent )
+        finish()
+
+
+        }
 
         var movie: Result? = null
         var movieId: Int? = intent.getIntExtra("movie.id", 0)
@@ -118,7 +136,7 @@ class MovieDetailActivity : AppCompatActivity() {
         descriptionOfMovie = findViewById(R.id.descriptionOfMovieDetail)
         rating = findViewById(R.id.ratingDetail)
         imageFavorite = findViewById(R.id.imageButtonFavor)
-
+        backButton = findViewById(R.id.buttonBackFromDetail)
     }
 
 

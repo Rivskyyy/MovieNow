@@ -5,10 +5,7 @@ import android.os.Bundle
 import android.widget.HorizontalScrollView
 import android.widget.ImageButton
 import androidx.appcompat.app.AppCompatActivity
-import com.RivskyInc.movienow.FavouriteMoviesActivity
-import com.RivskyInc.movienow.FindMovieActivity
-import com.RivskyInc.movienow.InfoActivity
-import com.RivskyInc.movienow.R
+import com.RivskyInc.movienow.*
 
 
 class MainActivity : AppCompatActivity() {
@@ -24,7 +21,7 @@ class MainActivity : AppCompatActivity() {
     private lateinit var horizontalScrollView: HorizontalScrollView
     private lateinit var buttonFavourite: ImageButton
     private lateinit var buttonInfo : ImageButton
-
+    private lateinit var viewModel : MainViewModel
     var averageMin = 5
     var averageMax = 10
 
@@ -54,7 +51,7 @@ class MainActivity : AppCompatActivity() {
         buttonStart.setOnClickListener {
 
             val setupPageForAllGenre = 1
-            val genreALl = "null"
+            val genreALl : Int? = null
 
             val intent = Intent(this, FindMovieActivity::class.java)
 
@@ -71,7 +68,7 @@ class MainActivity : AppCompatActivity() {
 
             val averageMinHorror = 5
             val averageMaxHorror = 10
-            val genreHorror = "27"                      // -> need String format for getStringExtra
+            val genreHorror : Int?  = 27                   // -> need String format for getStringExtra
             val intent = Intent(this, FindMovieActivity::class.java)
             intent.putExtra("genre", genreHorror)
             intent.putExtra("averageMin", averageMinHorror)
@@ -82,7 +79,7 @@ class MainActivity : AppCompatActivity() {
         buttonGenreAction.setOnClickListener {
             val averageMin = 5
             val averageMax = 10
-            val genreAction = "28"
+            val genreAction = 28
             val intent = Intent(this, FindMovieActivity::class.java)
             intent.putExtra("genre", genreAction)
             intent.putExtra("averageMin", averageMin)
@@ -94,7 +91,7 @@ class MainActivity : AppCompatActivity() {
         buttonGenreComedy.setOnClickListener {
             val averageMin = 5
             val averageMax = 10
-            val genreComedy = "35"
+            val genreComedy = 35
             val intent = Intent(this, FindMovieActivity::class.java)
             intent.putExtra("genre", genreComedy)
             intent.putExtra("averageMin", averageMin)
@@ -106,7 +103,7 @@ class MainActivity : AppCompatActivity() {
         buttonGenreDrama.setOnClickListener {
             val averageMin = 5
             val averageMax = 10
-            val genreDrama = "18"
+            val genreDrama = 18
             val intent = Intent(this, FindMovieActivity::class.java)
             intent.putExtra("genre", genreDrama)
             intent.putExtra("averageMin", averageMin)
@@ -118,7 +115,7 @@ class MainActivity : AppCompatActivity() {
         buttonGenreFantasy.setOnClickListener {
             val averageMin = 5
             val averageMax = 10
-            val genreFantasy = "14"
+            val genreFantasy = 14
             val intent = Intent(this, FindMovieActivity::class.java)
             intent.putExtra("genre", genreFantasy)
             intent.putExtra("averageMin", averageMin)
@@ -129,7 +126,7 @@ class MainActivity : AppCompatActivity() {
         buttonGenreThriller.setOnClickListener {
             val averageMin = 5
             val averageMax = 10
-            val genreThriller = "53"
+            val genreThriller = 53
             val intent = Intent(this, FindMovieActivity::class.java)
             intent.putExtra("genre", genreThriller)
             intent.putExtra("averageMin", averageMin)
@@ -140,9 +137,9 @@ class MainActivity : AppCompatActivity() {
         buttonGenreAnimation.setOnClickListener {
             val averageMin = 5
             val averageMax = 10
-            val genreAnimation = "16"
+            val genreAnimation = 16
             val intent = Intent(this, FindMovieActivity::class.java)
-            intent.putExtra("genre", genreAnimation)
+            intent.putExtra(GENRE, genreAnimation)
             intent.putExtra("averageMin", averageMin)
             intent.putExtra("averageMax", averageMax)
 
