@@ -1,4 +1,4 @@
-package com.example.movienow
+package com.RivskyInc.movienow
 
 import androidx.test.platform.app.InstrumentationRegistry
 import androidx.test.ext.junit.runners.AndroidJUnit4

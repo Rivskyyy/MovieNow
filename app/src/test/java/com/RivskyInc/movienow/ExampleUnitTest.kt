@@ -1,4 +1,4 @@
-package com.example.movienow
+package com.RivskyInc.movienow
 
 import org.junit.Test
 

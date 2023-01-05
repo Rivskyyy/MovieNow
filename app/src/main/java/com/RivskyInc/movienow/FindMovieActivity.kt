@@ -6,7 +6,12 @@ import android.os.Bundle
 import android.os.Handler
 import android.util.Log
 import android.view.View
+import android.view.View.GONE
+import android.view.animation.AlphaAnimation
+import android.view.animation.AnimationUtils
 import android.widget.Button
+import android.widget.ImageButton
+import android.widget.VideoView
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
@@ -15,8 +20,12 @@ import com.RivskyInc.movienow.API_SERVICE.Result
 import com.RivskyInc.movienow.adapter.MoviesAdapter
 import com.RivskyInc.movienow.database.MovieDao
 import com.RivskyInc.movienow.database.MovieDataBase
-import com.example.movienow.GENRE
-import com.example.movienow.MovieDetailActivity
+import com.airbnb.lottie.LottieAnimationView
+import com.google.android.gms.ads.*
+import com.google.android.gms.ads.interstitial.InterstitialAd
+import com.google.android.gms.ads.interstitial.InterstitialAdLoadCallback
+import com.google.android.gms.ads.nativead.NativeAd
+import com.google.android.gms.ads.nativead.NativeAdOptions
 import io.reactivex.rxjava3.android.schedulers.AndroidSchedulers
 import io.reactivex.rxjava3.functions.Consumer
 import io.reactivex.rxjava3.schedulers.Schedulers
@@ -26,13 +35,17 @@ import kotlin.random.Random
 
 class FindMovieActivity : AppCompatActivity() {
 
-    private lateinit var buttonNextMovie: Button
+    private lateinit var buttonNextMovie: ImageButton
     private lateinit var recyclerView: RecyclerView
     private lateinit var adapter: MoviesAdapter
     private lateinit var viewModel: MainViewModel
     private lateinit var dataBase: MovieDataBase
     private lateinit var movieDao: MovieDao
     private lateinit var loadGif : GifImageView
+    private lateinit var clickTip : LottieAnimationView
+    private val buttonClick = AlphaAnimation(1f, 0.6f)
+    val TAG = "FindMovieActivity"
+    private var mInterstitialAd: InterstitialAd? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -41,9 +54,35 @@ class FindMovieActivity : AppCompatActivity() {
 
         initViewFindMovie()
 
-        recyclerView.postDelayed(Runnable { recyclerView.setVisibility(View.VISIBLE) }, 750)
+        MobileAds.initialize(this@FindMovieActivity)
+
+
+
+        val adRequest = AdRequest.Builder().build()
+
+        InterstitialAd.load(this,"ca-app-pub-3940256099942544/1033173712", adRequest, object : InterstitialAdLoadCallback() {
+            override fun onAdFailedToLoad(adError: LoadAdError) {
+                adError?.toString()?.let { Log.d(TAG, it) }
+                mInterstitialAd = null
+            }
+
+            override fun onAdLoaded(interstitialAd: InterstitialAd) {
+                Log.d(TAG, "Ad was loaded.")
+                mInterstitialAd = interstitialAd
+            }
+        })
+        if (mInterstitialAd != null) {
+            mInterstitialAd?.show(this)
+        } else {
+            Log.d("TAG", "The interstitial ad wasn't ready yet.")
+        }
+        clickTip.postDelayed(Runnable { clickTip.setVisibility(View.VISIBLE) }, 2000)
+        clickTip.postDelayed(Runnable { clickTip.setVisibility(GONE) }, 5000)
+
+        recyclerView.postDelayed(Runnable { recyclerView.setVisibility(View.VISIBLE) }, 1100)
         val handler = Handler()
-        loadGif.postDelayed(Runnable { loadGif.setVisibility(View.GONE) }, 800)
+
+        loadGif.postDelayed(Runnable { loadGif.setVisibility(GONE) }, 1100)
        // handler.postDelayed(Runnable { loadGif.setVisibility(View.VISIBLE) }, 5000)
 
         loadMovies()
@@ -73,12 +112,16 @@ class FindMovieActivity : AppCompatActivity() {
 //                    intent.putExtra(EXTRA_MOVIE, movie.vote_average)
                 startActivity(intent)
             }
+
         }
+        val animButton = AnimationUtils.loadAnimation(this, com.google.android.material.R.anim.mtrl_bottom_sheet_slide_out)
         buttonNextMovie.setOnClickListener {
+            buttonNextMovie.startAnimation(animButton)
+           //onClick(buttonNextMovie)
 
             loadGif.setVisibility(View.VISIBLE)
-            loadGif.postDelayed(Runnable { loadGif.setVisibility(View.GONE) }, 800)
-            recyclerView.setVisibility(View.GONE)
+            loadGif.postDelayed(Runnable { loadGif.setVisibility(GONE) }, 800)
+            recyclerView.setVisibility(GONE)
             recyclerView.postDelayed(Runnable { recyclerView.setVisibility(View.VISIBLE) }, 800)
 
             loadMovies()
@@ -90,6 +133,7 @@ class FindMovieActivity : AppCompatActivity() {
 
 
     private fun initViewFindMovie() {
+        clickTip = findViewById(R.id.click_tip)
         buttonNextMovie = findViewById(R.id.buttonNextMovie)
         recyclerView = findViewById(R.id.recyclerView)
         loadGif = findViewById<GifImageView>(R.id.gifLoadMovies)
@@ -122,6 +166,26 @@ class FindMovieActivity : AppCompatActivity() {
         Log.d("real genre ", genre.toString())
         var region: String = Locale.getDefault().country.toString()
         var page = 0
+
+        if (genre?.equals(27) == true) {
+           buttonNextMovie.setImageResource(R.drawable.button_horror)      // horror
+        } else if (genre?.equals(28) == true) {
+            buttonNextMovie.setImageResource(R.drawable.button_action)        // action
+        } else if (genre?.equals(35) == true) {
+           buttonNextMovie.setImageResource(R.drawable.button_comedy)        //comedy
+        } else if (genre?.equals(18) == true) {
+           buttonNextMovie.setImageResource(R.drawable.button_drama)       //drama
+        } else if (genre?.equals(14) == true) {
+          buttonNextMovie.setImageResource(R.drawable.fantasy_button)       //fantasy
+        } else if (genre?.equals(53) == true) {
+            buttonNextMovie.setImageResource(R.drawable.button_knife)       //thriller
+        } else if (genre?.equals(16) == true) {
+           buttonNextMovie.setImageResource(R.drawable.button_cartoons)        //animation
+            // all
+        } else {
+            genre = null
+            buttonNextMovie.setImageResource(R.drawable.button_start_v2)
+        }
         if (region.equals("UA")){                           // Algorithm for
                                                             //  Ukrainian localization
               page  =
@@ -196,7 +260,7 @@ class FindMovieActivity : AppCompatActivity() {
         // fixed, the region's fault
 
         //need to fix getStringExtra -> getIntExtra
-
+       // val video = true
 
         val apiFactory = ApiFactory.apiService.loadMovies(
             page,
@@ -206,7 +270,8 @@ class FindMovieActivity : AppCompatActivity() {
             vote_max,
             genre,
             voteAverageMin,
-            voteAverageMax
+            voteAverageMax,
+
         )
 
             .subscribeOn(Schedulers.io())
@@ -225,5 +290,7 @@ class FindMovieActivity : AppCompatActivity() {
 
     }
 
-
+    private fun onClick(v: View) {
+        v.startAnimation(buttonClick)
+    }
 }

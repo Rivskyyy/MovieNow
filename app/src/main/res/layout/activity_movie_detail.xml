@@ -6,7 +6,7 @@
     android:padding="8dp"
     app:cardCornerRadius="8dp"
     app:cardUseCompatPadding="true"
-    tools:context=".MovieDetailActivity"
+    tools:context="com.RivskyInc.movienow.MovieDetailActivity"
     android:background="@color/black"
     >
 
@@ -16,6 +16,15 @@
         android:layout_height="wrap_content"
         android:padding="8dp"
         >
+
+        <com.google.android.gms.ads.nativead.NativeAdView
+            android:id="@+id/nativeAdView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/posterImageDetail" />
 
 
         <ImageView
@@ -94,6 +103,7 @@
 
 
         <TextView
+            android:id="@+id/textView3"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginBottom="6dp"
@@ -169,6 +179,15 @@
 
 
             app:layout_constraintStart_toStartOf="parent" />
+
+        <VideoView
+            android:id="@+id/TrailerView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/descriptionOfMovieDetail" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 
 </ScrollView>

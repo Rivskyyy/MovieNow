@@ -14,7 +14,6 @@ import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.RivskyInc.movienow.API_SERVICE.Result
 import com.RivskyInc.movienow.adapter.FavouriteMoviesAdapter
-import com.example.movienow.MovieDetailActivity
 
 class FavouriteMoviesActivity : AppCompatActivity() {
     private lateinit var textViewEmpty : TextView

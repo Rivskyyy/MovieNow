@@ -1,4 +1,4 @@
-package com.example.movienow
+package com.RivskyInc.movienow
 
 import android.content.Context
 import android.content.Intent
@@ -9,14 +9,19 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.Observer
 import com.RivskyInc.movienow.API_SERVICE.BASE_IMAGE_POSTER
 import com.RivskyInc.movienow.API_SERVICE.Result
-import com.RivskyInc.movienow.MainViewModel
-import com.RivskyInc.movienow.R
 import com.RivskyInc.movienow.adapter.MoviesAdapter
 import com.bumptech.glide.Glide
+import com.google.android.gms.ads.*
+import com.google.android.gms.ads.admanager.AdManagerAdRequest
+import com.google.android.gms.ads.nativead.NativeAd
+import com.google.android.gms.ads.nativead.NativeAdOptions
+import com.google.android.gms.ads.rewarded.RewardItem
+import com.google.android.gms.ads.rewarded.RewardedAd
+import com.google.android.gms.ads.rewarded.RewardedAdLoadCallback
 
 const val EXTRA_MOVIE: String = "movie"
 const val GENRE : String = "genre"
-class MovieDetailActivity : AppCompatActivity() {
+class MovieDetailActivity : AppCompatActivity(){
 
     private lateinit var posterImageView: ImageView
     private lateinit var nameOfMovie: TextView
@@ -25,7 +30,8 @@ class MovieDetailActivity : AppCompatActivity() {
     private lateinit var rating: TextView
     private lateinit var adapter: MoviesAdapter
     private lateinit var backButton : Button
-
+    private var mRewardedAd: RewardedAd? = null
+    private val TAG = "MovieDetailActivity"
     // private lateinit var movieDao : MovieDao
     private lateinit var imageFavorite: ImageButton
     private lateinit var viewModel: MainViewModel
@@ -35,6 +41,37 @@ class MovieDetailActivity : AppCompatActivity() {
         setContentView(R.layout.activity_movie_detail)
 
         initView()
+
+       // MobileAds.initialize(this@MovieDetailActivity)
+
+//            var adRequest = AdRequest.Builder().build()
+//            RewardedAd.load(
+//                this@MovieDetailActivity,
+//                "ca-app-pub-3940256099942544/5224354917",
+//                adRequest,
+//                object : RewardedAdLoadCallback() {
+//                    override fun onAdFailedToLoad(adError: LoadAdError) {
+//                        adError?.toString()?.let { Log.d(TAG, it) }
+//                        mRewardedAd = null
+//                    }
+//
+//                    override fun onAdLoaded(rewardedAd: RewardedAd) {
+//                        Log.d(TAG, "Ad was loaded.")
+//                        mRewardedAd = rewardedAd
+//                    }
+//                })
+//            if (mRewardedAd != null) {
+//                mRewardedAd?.show(this, OnUserEarnedRewardListener() {
+//                    fun onUserEarnedReward(rewardItem: RewardItem) {
+//                        var rewardAmount = rewardItem.amount
+//                        var rewardType = rewardItem.type
+//                        Log.d(TAG, "User earned the reward.")
+//                    }
+//                })
+//            } else {
+//                Log.d(TAG, "The rewarded ad wasn't ready yet.")
+//            }
+
         val setupGenre: Int? = intent.getIntExtra(GENRE, 0)
         val setupAverageMin = intent.getIntExtra("averageMin", 5 )
         val setupAverageMax = intent.getIntExtra("averageMax", 10)
