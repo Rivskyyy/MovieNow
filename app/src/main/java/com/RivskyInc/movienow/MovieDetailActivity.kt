@@ -1,6 +1,5 @@
-package com.RivskyInc.movienow
+package com.example.movienow
 
-import android.app.Activity
 import android.content.Context
 import android.content.Intent
 import android.os.Bundle
@@ -10,9 +9,10 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.Observer
 import com.RivskyInc.movienow.API_SERVICE.BASE_IMAGE_POSTER
 import com.RivskyInc.movienow.API_SERVICE.Result
+import com.RivskyInc.movienow.MainViewModel
+import com.RivskyInc.movienow.R
 import com.RivskyInc.movienow.adapter.MoviesAdapter
 import com.bumptech.glide.Glide
-import com.example.movienow.MainActivity
 
 const val EXTRA_MOVIE: String = "movie"
 const val GENRE : String = "genre"

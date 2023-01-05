@@ -10,12 +10,13 @@ import android.widget.Button
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import com.RivskyInc.movienow.R
 import com.RivskyInc.movienow.API_SERVICE.ApiFactory
 import com.RivskyInc.movienow.API_SERVICE.Result
 import com.RivskyInc.movienow.adapter.MoviesAdapter
 import com.RivskyInc.movienow.database.MovieDao
 import com.RivskyInc.movienow.database.MovieDataBase
+import com.example.movienow.GENRE
+import com.example.movienow.MovieDetailActivity
 import io.reactivex.rxjava3.android.schedulers.AndroidSchedulers
 import io.reactivex.rxjava3.functions.Consumer
 import io.reactivex.rxjava3.schedulers.Schedulers

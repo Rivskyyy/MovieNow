@@ -1,8 +1,8 @@
 package com.RivskyInc.movienow.API_SERVICE
 
 
-import com.RivskyInc.movienow.api_key.API_KEY
-import com.RivskyInc.movienow.api_key.API_KEY
+
+import com.example.movienow.API_SERVICE.API_KEY.API_KEY
 import io.reactivex.rxjava3.core.Single
 import retrofit2.http.GET
 import retrofit2.http.Query

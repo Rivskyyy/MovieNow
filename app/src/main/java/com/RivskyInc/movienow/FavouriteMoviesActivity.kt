@@ -8,13 +8,13 @@ import android.view.View
 import android.widget.Button
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
-import androidx.core.view.isEmpty
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.RivskyInc.movienow.API_SERVICE.Result
 import com.RivskyInc.movienow.adapter.FavouriteMoviesAdapter
+import com.example.movienow.MovieDetailActivity
 
 class FavouriteMoviesActivity : AppCompatActivity() {
     private lateinit var textViewEmpty : TextView
