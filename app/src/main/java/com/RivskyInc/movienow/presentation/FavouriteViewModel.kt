@@ -1,10 +1,10 @@
-package com.RivskyInc.movienow
+package com.RivskyInc.movienow.presentation
 
 import android.app.Application
 import androidx.lifecycle.AndroidViewModel
 import androidx.lifecycle.LiveData
-import com.RivskyInc.movienow.database.MovieDao
-import com.RivskyInc.movienow.database.MovieDataBase
+import com.RivskyInc.movienow.data.database.MovieDao
+import com.RivskyInc.movienow.data.database.MovieDataBase
 import com.RivskyInc.movienow.API_SERVICE.Result
 
 

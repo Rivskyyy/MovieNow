@@ -21,7 +21,7 @@
             android:name="com.google.android.gms.ads.APPLICATION_ID"
             android:value="ca-app-pub-7124048404999597~2429109838"/>
         <activity
-            android:name=".SplashScreenActivity"
+            android:name=".presentation.SplashScreenActivity"
             android:exported="true"
             android:theme="@style/SplashTheme">
             <intent-filter>
@@ -33,19 +33,19 @@
 
         </activity>
         <activity
-            android:name=".InfoActivity"
+            android:name=".presentation.InfoActivity"
             android:exported="false" />
         <activity
-            android:name="com.RivskyInc.movienow.FavouriteMoviesActivity"
+            android:name="com.RivskyInc.movienow.presentation.FavouriteMoviesActivity"
             android:exported="false" />
         <activity
-            android:name=".MovieDetailActivity"
+            android:name=".presentation.MovieDetailActivity"
             android:exported="false" />
         <activity
-            android:name=".FindMovieActivity"
+            android:name=".presentation.FindMovieActivity"
             android:exported="false" />
         <activity
-            android:name=".MainActivity"
+            android:name=".presentation.MainActivity"
             android:exported="false"
             >
 

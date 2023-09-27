@@ -1,12 +1,12 @@
-package com.RivskyInc.movienow
+package com.RivskyInc.movienow.presentation
 
 import android.app.Application
 import android.util.Log
 import androidx.lifecycle.AndroidViewModel
 import androidx.lifecycle.LiveData
 import com.RivskyInc.movienow.API_SERVICE.Result
-import com.RivskyInc.movienow.database.MovieDao
-import com.RivskyInc.movienow.database.MovieDataBase
+import com.RivskyInc.movienow.data.database.MovieDao
+import com.RivskyInc.movienow.data.database.MovieDataBase
 import io.reactivex.rxjava3.disposables.CompositeDisposable
 import io.reactivex.rxjava3.disposables.Disposable
 import io.reactivex.rxjava3.schedulers.Schedulers

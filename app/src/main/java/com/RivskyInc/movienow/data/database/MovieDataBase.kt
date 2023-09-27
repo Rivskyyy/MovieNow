@@ -1,4 +1,4 @@
-package com.RivskyInc.movienow.database
+package com.RivskyInc.movienow.data.database
 
 import android.content.Context
 import android.util.Log

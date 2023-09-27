@@ -1,10 +1,11 @@
-package com.RivskyInc.movienow
+package com.RivskyInc.movienow.presentation
 
 import android.content.Context
 import android.content.Intent
 import android.os.Bundle
 import android.widget.Button
 import androidx.appcompat.app.AppCompatActivity
+import com.RivskyInc.movienow.R
 
 class InfoActivity : AppCompatActivity() {
 

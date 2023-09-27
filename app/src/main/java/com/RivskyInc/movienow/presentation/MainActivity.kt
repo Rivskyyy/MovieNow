@@ -1,28 +1,22 @@
-package com.RivskyInc.movienow
+package com.RivskyInc.movienow.presentation
 
-import android.annotation.SuppressLint
-import android.content.ContentValues.TAG
 import android.content.Intent
 import android.graphics.Bitmap
-import android.graphics.PorterDuff
 import android.os.Bundle
 import android.util.Log
-import android.view.MotionEvent
 import android.view.View
 import android.view.animation.AlphaAnimation
-import android.view.animation.Animation
 import android.view.animation.AnimationUtils
 import android.widget.HorizontalScrollView
 import android.widget.ImageButton
 import android.widget.ImageView
 import androidx.appcompat.app.AppCompatActivity
 import androidx.constraintlayout.widget.ConstraintLayout
+import com.RivskyInc.movienow.R
 import com.airbnb.lottie.LottieAnimationView
 import com.google.android.gms.ads.*
 import com.google.android.gms.ads.interstitial.InterstitialAd
 import com.google.android.gms.ads.interstitial.InterstitialAdLoadCallback
-import com.google.android.gms.ads.nativead.NativeAd
-import com.google.android.gms.ads.nativead.NativeAdOptions
 
 
 class MainActivity : AppCompatActivity() {

@@ -1,4 +1,4 @@
-package com.RivskyInc.movienow
+package com.RivskyInc.movienow.presentation
 
 
 import android.content.Intent
@@ -9,23 +9,20 @@ import android.view.View
 import android.view.View.GONE
 import android.view.animation.AlphaAnimation
 import android.view.animation.AnimationUtils
-import android.widget.Button
 import android.widget.ImageButton
-import android.widget.VideoView
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.RivskyInc.movienow.API_SERVICE.ApiFactory
 import com.RivskyInc.movienow.API_SERVICE.Result
-import com.RivskyInc.movienow.adapter.MoviesAdapter
-import com.RivskyInc.movienow.database.MovieDao
-import com.RivskyInc.movienow.database.MovieDataBase
+import com.RivskyInc.movienow.R
+import com.RivskyInc.movienow.presentation.adapter.MoviesAdapter
+import com.RivskyInc.movienow.data.database.MovieDao
+import com.RivskyInc.movienow.data.database.MovieDataBase
 import com.airbnb.lottie.LottieAnimationView
 import com.google.android.gms.ads.*
 import com.google.android.gms.ads.interstitial.InterstitialAd
 import com.google.android.gms.ads.interstitial.InterstitialAdLoadCallback
-import com.google.android.gms.ads.nativead.NativeAd
-import com.google.android.gms.ads.nativead.NativeAdOptions
 import io.reactivex.rxjava3.android.schedulers.AndroidSchedulers
 import io.reactivex.rxjava3.functions.Consumer
 import io.reactivex.rxjava3.schedulers.Schedulers

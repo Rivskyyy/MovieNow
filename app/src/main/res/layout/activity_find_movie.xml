@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:layout_gravity="center"
-    tools:context=".FindMovieActivity"
+    tools:context=".presentation.FindMovieActivity"
     android:background="@color/black_another_palette">
 
 

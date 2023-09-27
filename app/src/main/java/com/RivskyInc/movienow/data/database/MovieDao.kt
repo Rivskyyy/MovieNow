@@ -1,4 +1,4 @@
-package com.RivskyInc.movienow.database
+package com.RivskyInc.movienow.data.database
 
 import androidx.lifecycle.LiveData
 import androidx.room.Dao

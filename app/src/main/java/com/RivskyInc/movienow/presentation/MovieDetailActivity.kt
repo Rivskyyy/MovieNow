@@ -1,4 +1,4 @@
-package com.RivskyInc.movienow
+package com.RivskyInc.movienow.presentation
 
 import android.content.Context
 import android.content.Intent
@@ -9,15 +9,10 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.Observer
 import com.RivskyInc.movienow.API_SERVICE.BASE_IMAGE_POSTER
 import com.RivskyInc.movienow.API_SERVICE.Result
-import com.RivskyInc.movienow.adapter.MoviesAdapter
+import com.RivskyInc.movienow.R
+import com.RivskyInc.movienow.presentation.adapter.MoviesAdapter
 import com.bumptech.glide.Glide
-import com.google.android.gms.ads.*
-import com.google.android.gms.ads.admanager.AdManagerAdRequest
-import com.google.android.gms.ads.nativead.NativeAd
-import com.google.android.gms.ads.nativead.NativeAdOptions
-import com.google.android.gms.ads.rewarded.RewardItem
 import com.google.android.gms.ads.rewarded.RewardedAd
-import com.google.android.gms.ads.rewarded.RewardedAdLoadCallback
 
 const val EXTRA_MOVIE: String = "movie"
 const val GENRE : String = "genre"
